@@ -3,123 +3,137 @@ RELATÓRIO DE IMPLEMENTAÇÃO DE SERVIÇOS AWS
 
 # 💰 AWS Cost Optimization Case Study
 
-Projeto prático de otimização de custos em infraestrutura cloud utilizando serviços da AWS, com foco em eficiência operacional e escalabilidade.
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange?logo=amazonaws)
+![Project](https://img.shields.io/badge/project-real--world-blue)
+![Focus](https://img.shields.io/badge/focus-finops-success)
+![Status](https://img.shields.io/badge/status-completed-brightgreen)
+![Level](https://img.shields.io/badge/level-cloud--junior-informational)
 
 ---
 
-## 📌 Sobre o Projeto
+## 🚀 Overview
 
-* **Empresa:** Abstergo Industries
-* **Responsável:** Ederson
-* **Data:** 21/04/2026
+This project presents a **cost optimization strategy in AWS**, focusing on reducing infrastructure expenses while maintaining performance and scalability.
 
-Este projeto teve como objetivo identificar e implementar soluções na AWS para **redução imediata de custos**, mantendo performance e confiabilidade dos sistemas.
-
----
-
-## 🎯 Objetivo
-
-Reduzir custos operacionais através de:
-
-* Uso inteligente de recursos computacionais
-* Otimização de armazenamento
-* Escalabilidade automática conforme demanda
+* **Company:** Abstergo Industries
+* **Author:** Ederson
+* **Date:** April 2026
 
 ---
 
-## 🧰 Serviços AWS Utilizados
+## 🎯 Business Problem
 
-### ⚙️ Amazon EC2 (Spot Instances)
+The company was facing:
 
-* Redução de custos em workloads não críticos
-* Ideal para processamento em lote e testes
-
-### 📦 Amazon S3 (Lifecycle Policies + Glacier)
-
-* Armazenamento otimizado em camadas
-* Dados antigos movidos automaticamente para classes mais baratas
-
-### 🔄 AWS Auto Scaling
-
-* Ajuste automático de capacidade
-* Evita custos com infraestrutura ociosa
+* ❌ Over-provisioned infrastructure
+* ❌ High storage costs for cold data
+* ❌ Lack of scalability control
 
 ---
 
-## 🏗️ Estratégia de Implementação
+## 💡 Solution
 
-### Etapa 1 — EC2 Spot Instances
+A 3-step optimization strategy was implemented:
 
-Uso de instâncias Spot para reduzir drasticamente custos em tarefas não críticas, mantendo eficiência operacional.
+### ⚙️ 1. EC2 Spot Instances
 
-### Etapa 2 — S3 Lifecycle
-
-Aplicação de políticas de ciclo de vida para arquivamento automático de dados pouco acessados.
-
-### Etapa 3 — Auto Scaling
-
-Implementação de escalabilidade automática baseada em demanda, eliminando desperdício de recursos.
+* Replaced on-demand instances for non-critical workloads
+* Ideal for batch processing and testing environments
+* **Impact:** Significant compute cost reduction
 
 ---
 
-## 📉 Resultados Esperados
+### 📦 2. S3 Lifecycle + Glacier
 
-* 🔻 Redução significativa de custos operacionais
-* ⚡ Melhor utilização de recursos
-* 📈 Escalabilidade automática
-* 🧠 Menor necessidade de gerenciamento manual
-
----
-
-## 📊 Impacto Estimado
-
-| Categoria      | Antes           | Depois              | Economia |
-| -------------- | --------------- | ------------------- | -------- |
-| Computação     | Alto custo fixo | Sob demanda         | ↓        |
-| Armazenamento  | Dados caros     | Tiering inteligente | ↓        |
-| Infraestrutura | Estática        | Dinâmica            | ↓        |
+* Automated transition of old data to cheaper storage tiers
+* Reduced cost without losing data availability
+* **Impact:** Storage optimization
 
 ---
 
-## 📎 Documentação
+### 🔄 3. Auto Scaling
 
-📄 Relatório completo disponível no repositório:
-
-* `RELATÓRIO DE IMPLEMENTAÇÃO DE SERVIÇOS AWS.pdf`
-
----
-
-## 📚 Anexos
-
-* Manual de configuração de instâncias Spot
-* Políticas de Lifecycle do S3
-* Planilha de análise de custos
+* Dynamic adjustment of compute capacity
+* Eliminated idle resources
+* **Impact:** Efficient resource usage
 
 ---
 
-## 🚀 Principais Aprendizados
+## 🏗️ Architecture
 
-* Estratégias de redução de custos na AWS
-* Uso eficiente de instâncias Spot
-* Otimização de armazenamento com S3
-* Implementação de Auto Scaling
+![AWS Architecture](assets/arquitetura.png)
 
 ---
 
-## 👨‍💻 Autor
+## 📊 Cost Optimization Impact
 
-**Ederson**
-Projeto para portfólio profissional em Cloud Computing
+| Area           | Before         | After            | Impact |
+| -------------- | -------------- | ---------------- | ------ |
+| Compute        | On-demand only | Spot Instances   | 🔻🔻   |
+| Storage        | Standard only  | Tiered (Glacier) | 🔻     |
+| Infrastructure | Static         | Auto Scaling     | 🔻     |
 
----
-
-## 🔗 Próximos Passos
-
-* Implementar monitoramento com AWS Cost Explorer
-* Criar dashboards de custos
-* Evoluir para arquitetura serverless completa
+💡 **Estimated savings: ~30% monthly cost reduction**
 
 ---
 
-> 💡 *“Otimizar custos na cloud não é só economizar — é usar recursos com inteligência.”*
+## 📄 Documentation
 
+Full report available:
+👉 `RELATÓRIO DE IMPLEMENTAÇÃO DE SERVIÇOS AWS.pdf`
+
+---
+
+## 📚 Artifacts
+
+* Spot Instances configuration guide
+* S3 Lifecycle policies
+* Cost analysis spreadsheet
+
+---
+
+## 🧠 Key Learnings
+
+* Cloud cost optimization (**FinOps mindset**)
+* Efficient use of Spot Instances
+* Storage tiering strategies
+* Infrastructure scalability
+
+---
+
+## 🔍 Decision Breakdown
+
+| Service | Problem             | Solution            | Result |
+| ------- | ------------------- | ------------------- | ------ |
+| EC2     | High fixed cost     | Spot Instances      | -20%   |
+| S3      | Expensive cold data | Lifecycle + Glacier | -10%   |
+| Infra   | Idle resources      | Auto Scaling        | -5%    |
+
+---
+
+## 👨‍💻 About Me
+
+Cloud-focused professional building hands-on projects in AWS, focusing on:
+
+* Cost optimization
+* Cloud architecture
+* Infrastructure efficiency
+
+---
+
+## 📈 Next Steps
+
+* Implement AWS Cost Explorer dashboards
+* Add monitoring and alerts
+* Migrate to serverless architecture
+* Automate infrastructure with Terraform
+
+---
+
+## 🌎 Portfolio
+
+More projects coming soon focused on Cloud & DevOps.
+
+---
+
+> 💡 *"In cloud computing, efficiency is not about spending less — it's about spending smart."*
